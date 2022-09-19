@@ -11,32 +11,38 @@ public class Array_Merge_{
     
     public static void main(String[] args) {
     	Scanner sc = new Scanner(System.in);
-    	//System.out.println("No. of array");
+    	System.out.println("No. of array");
         int noOfArrays = sc.nextInt();
-        //System.out.println("No. of ele");
+        System.out.println("No. of ele");
         int noOfElements = sc.nextInt();
+        
         int totalElements = noOfArrays*noOfElements;
-        // int[][] arrays = new int[noOfArrays][];
+        
         
         int[] finalArray = new int[totalElements];
-
+        
+//First loop____________________________________________
         int[] counter = new int[noOfArrays];
         for(int i=0;i<noOfArrays;i++){
-            counter[i] = i* noOfElements; //i*3
+            counter[i] = i* noOfElements; 
         }
-
+        
+//Second loop___________________________________________
         for(int n:counter){
             for(int j=0;j<noOfElements;j++){
-            	//System.out.println("enter element");
+            	System.out.println("enter element");
                 finalArray[n+j] = sc.nextInt();
             }
         }  
         sc.close();
+        
+//Third loop____________________________________________
         for(int i=0;i<totalElements;i++){
             System.out.print(finalArray[i] + " ");}
         
+//Fourth loop___________________________________________       
         for(int i=0;i<totalElements;i++){
-            for(int j=i+1;j<totalElements;j++){
+            for(int j=i;j<totalElements;j++){
                 if(finalArray[i]>finalArray[j]){
                     int tmp = finalArray[i];
                     finalArray[i]=finalArray[j];
@@ -44,6 +50,7 @@ public class Array_Merge_{
                 }
             }
         }
+//Fifth loop____________________________________________        
 
         System.out.println("Final Sorted Array: ");
         for(int i=0;i<totalElements;i++){
